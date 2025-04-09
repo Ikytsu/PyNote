@@ -44,4 +44,4 @@ Ce projet c'est :
 ---
 
 🔥 **Mantra Final :**  
-**__RE-STEZ-CHILL__** *(Même quand tout explose devant vous.)*  
+**__RE-STEZ-CHILL__** *(Même quand tout explose devant vous.)*  .
