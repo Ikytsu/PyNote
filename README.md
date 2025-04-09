@@ -1,36 +1,39 @@
 # PyNote
-Low budget alternative of Notion
+Low-budget alternative to Notion
 
 ## Warning
-This project is made for educational purpose, it can be unstable for sure
+This project is made for educational purposes, so it may be unstable.
 
 ## Dependencies
-``customtkinter and tkinter (for linux user who doesn't have it already)``
+``customtkinter`` and ``tkinter`` (for Linux users who don't have it already)
 
 ## Features
-**Note that theses features aren't already implemented, see the plan section**
+**Note that these features aren't implemented yet. See the plan section.**
 
--Custom settings including:
-Language selection, save directory management, and update warnings
-With custom translation support, don't hesitate to pull request yours.
+- **Custom settings**, including:
+  - Language selection
+  - Save directory management
+  - Update warnings
+  - Custom translation support (feel free to contribute your translations through pull requests).
 
--Support:
-MarkDown files (with images support ehehe) and exmak (exercice maker file, only for Pynote) files
-Other files can also be opened without the specialized integration
+- **Support for**:
+  - Markdown files (with image support!)
+  - `.exmak` files (Exercise Maker files, specific to PyNote)
+  - Other file types can also be opened, though they won't have specialized integration.
 
--Workspace selection
+- **Workspace selection** for organizing different areas of your project.
 
--Tree structure files like in notion
+- **Tree structure for files**, similar to Notion’s structure.
 
--Some command arguments: -debug and -settingfile (to use a setting file who's not in the folder)
+- **Command arguments**:
+  - `-debug`
+  - `-settingfile` (to use a settings file that’s not in the default folder).
 
+## .exmak
+`.exmak` files contain quiz data. You can create `.exmak` files easily in PyNote to integrate quizzes into learning courses or other educational content.
 
-
-##exmak
-.exmak files contain quiz data, you can make a .exmak file easily in Pynote to integrate this in some learning courses or idk
-
-##Plan
-Nothing done yet, it will change :)
+## Plan
+Nothing is done yet; this will change over time. Stay tuned for updates!
 
 ## Contribute
-Feel free to contribute by opening pull requests or sending issues 
+Feel free to contribute by opening pull requests or submitting issues.
