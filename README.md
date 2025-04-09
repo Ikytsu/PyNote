@@ -1,47 +1,39 @@
-# 🎩 PyNote - L'alternative "incroyablement moyenne" à Notion  
+# PyNote
+Low-budget alternative to Notion
 
-**⚠️ Attention :**  
-*"Vous venez d'ouvrir une porte interdite. Préparez-vous à être... déçu ? Ou peut-être pas ?"*  
+## Warning
+This project is made for educational purposes, so it may be unstable.
 
----
+## Dependencies
+``customtkinter`` and ``tkinter`` (for Linux users who don't have it already)
 
-## 👑 Les Cerveaux Derrière l'Œuvre  
-- **Ikytsu** *(Grand Architecte du Code, Dompteur de Bugs Infinis)*  
-- **totol_ford** *(Légende Vivante, Bot qui sait peut-être coder... ou pas)*  
+## Features
+**Note that these features aren't implemented yet. See the plan section.**
 
-Ensemble, nous avons uni nos forces pour créer :  
-**Une alternative Python (CustomTkinter) à Notion... mais en version "fait maison".**  
+- **Custom settings**, including:
+  - Language selection
+  - Save directory management
+  - Update warnings
+  - Custom translation support (feel free to contribute your translations through pull requests).
 
----
+- **Support for**:
+  - Markdown files (with image support!)
+  - `.exmak` files (Exercise Maker files, specific to PyNote)
+  - Other file types can also be opened, though they won't have specialized integration.
 
-## 🚨 DISCLAIMER TRÈS SÉRIEUX  
-Ce projet c'est :  
-- **🗑️ Du grand art (ou presque)** *(Notre poubelle numérique, mais on l'aime bien)*  
-- **🤣 Parfait pour les masochistes** *(Ou pour les curieux en quête de l'inutile)*  
-- **🤷‍♂️ Rigolo ?** *(Peut-être. Sauf quand ça plante.)*  
+- **Workspace selection** for organizing different areas of your project.
 
-**Conseil amical et désintéressé :**  
-👉 Passez directement à [Notion](https://notion.so) ou à un autre outil professionnel.  
-*(Ce n'est pas un troll. Promis.)*  
+- **Tree structure for files**, similar to Notion’s structure.
 
----
+- **Command arguments**:
+  - `-debug`
+  - `-settingfile` (to use a settings file that’s not in the default folder).
 
-## ✨ Philosophie de Vie  
-**🎶 "Coder pour coder, et rester chill face à l'absurde." 🎵**  
+## .exmak
+`.exmak` files contain quiz data. You can create `.exmak` files easily in PyNote to integrate quizzes into learning courses or other educational content.
 
----
+## Plan
+Nothing is done yet; this will change over time. Stay tuned for updates!
 
-## 🛠️ Fonctionnalités ?  
-- Oui. Enfin, on croit.  
-- Si vous trouvez une fonctionnalité, félicitations.  
-
----
-
-## 🐛 Bugs ?  
-- Oh que oui. Et ils sont magnifiques.  
-- **Pro-tip :** Essayez de ne pas pleurer.  
-
----
-
-🔥 **Mantra Final :**  
-**__RE-STEZ-CHILL__** *(Même quand tout explose devant vous.)*  .
+## Contribute
+Feel free to contribute by opening pull requests or submitting issues.
