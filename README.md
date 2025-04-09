@@ -1,13 +1,34 @@
-# PyNote
-Tu n'est pas sencé voire ça, ou peut être que si, ou peut être que non. 
+# 🐍 PyNote - L'alternative "éclatée" à Notion  
 
+**⚠️ Attention :**  
+*"Tu n'es pas censé voir ça... ou peut-être que si. Ou peut-être que non."*  
 
-Ikytsu (un grand dieu du code)
-et
-totol_fird (un gros bot qui c'est pas coder)
+---
 
-Ensembles nous avons créer:
-Une alternative un peu éclaté à notion en python (customtkinter)
+## 🧑‍💻 Créateurs  
+- **Ikytsu** *(Grand Dieu du Code, Maître des Bugs)*  
+- **totol_ford** *(Bot légendaire qui ne sait pas coder... ou peut-être que si)*  
 
-Sacher que c'est de la merde et que je vous conseille à 100% d'utiliser Notion ou nos concurent 
-et n'oubliez pas, **__rester chill__**
+Ensemble, nous avons donné naissance à :  
+**Une alternative Python (CustomTkinter) à Notion... mais en moins bien.**  
+
+---
+
+## 🚨 AVERTISSEMENT HONNÊTE  
+Ce projet est :  
+- 🗑️ **De la merde** (mais notre merde)  
+- 😅 **100% inutile** (sauf pour se torturer)  
+- 🤷 **Rigolo ?** *(Je crois... ou pas.)*  
+
+**Conseil officiel :**  
+👉 Utilisez [Notion](https://notion.so) ou un concurrent sérieux. *(Vraiment.)*  
+
+---
+
+## ✨ Philosophie  
+**"Coder pour coder, et rester chill."**  
+
+---  
+
+🔥 **Rappel final :**  
+**__RE-STEZ-CHILL__** *(même devant les bugs imprononçables)*  
