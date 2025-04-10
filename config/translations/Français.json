@@ -1,0 +1,35 @@
+{
+    "setup":
+    {
+        "option1":
+        {
+            "text_label": "Choississez votre langue"
+        },
+        "option2":
+        {
+            "text_label": "Emplacement d'enregistrement par défaut de Pynotes",
+            "select_button": "Choisir un dossier",
+            "text_label2_selected": "Dossier sélectionné:",
+            "text_label2_notselected": "Pas de dossier sélectionné"
+
+        },
+        "option3":
+        {
+            "text_label": "M'avertir dès qu'il y a une mise à jour"
+        },
+        "button": "Suivant"
+    },
+    "warn":
+    {
+        "title":
+        {
+            "incorrect_option": "Choix d'option incorrect",
+            "incorrect_settings": "Fichier de configuration incorrect"
+        },
+        "description":
+        {
+            "incorrect_settings": "Votre fichier de configuration est vide ou incomplet, la procédure de configuration recommence (cela va rénitialiser vos paramètres)",
+            "incorrect_option2": "Vous devez choisir un dossier"
+        }
+    }
+}
