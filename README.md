@@ -1,71 +1,39 @@
-# PyNote  
-*"Notion's thrifty cousin – all the organization, none of the subscription guilt."*  
+# PyNote
+Low-budget alternative to Notion
 
----
+## Warning
+This project is made for educational purposes, so it may be unstable.
 
-## ⚠️ Disclaimer  
-This project is primarily for educational purposes. It might occasionally misbehave, like a cat on a keyboard. Use at your own risk.  
+## Dependencies
+``customtkinter`` and ``tkinter`` (for Linux users who don't have it already)
 
----
+## Features
+**Note that these features aren't implemented yet. See the plan section.**
 
-## 📦 Dependencies  
-Before diving in, make sure you have:  
-- `customtkinter` (because default Tkinter is *so* last decade)  
-- `tkinter` (Linux users, if you don’t have it yet: `sudo apt-get install python3-tk`)  
+- **Custom settings**, including:
+  - Language selection
+  - Save directory management
+  - Update warnings
+  - Custom translation support (feel free to contribute your translations through pull requests).
 
----
+- **Support for**:
+  - Markdown files (with image support!)
+  - `.exmak` files (Exercise Maker files, specific to PyNote)
+  - Other file types can also be opened, though they won't have specialized integration.
 
-## ✨ Features (Coming Soon™)  
-*"The future is bright… just not here yet."*  
+- **Workspace selection** for organizing different areas of your project.
 
-### ⚙️ Custom Settings  
-- **Language selection** (Parlez-vous Python?)  
-- **Save directory management** (Because chaos is not a filing system.)  
-- **Update warnings** (No surprises, unless you ignore them.)  
-- **Custom translations** (Feeling multilingual? Submit your translations via PR!)  
+- **Tree structure for files**, similar to Notion’s structure.
 
-### 📂 File Support  
-- **Markdown** (with images! Because words alone can be lonely.)  
-- **`.exmak` files** (PyNote’s *very own* quiz format—great for learning or tormenting students.)  
-- **Other files** (You *can* open them… but don’t expect magic.)  
+- **Command arguments**:
+  - `-debug`
+  - `-settingfile` (to use a settings file that’s not in the default folder).
 
-### 🖥️ Workspace & Structure  
-- **Workspace selection** (For those who like compartments in their digital life.)  
-- **Tree-based file organization** (Notion vibes, minus the price tag.)  
+## .exmak
+`.exmak` files contain quiz data. You can create `.exmak` files easily in PyNote to integrate quizzes into learning courses or other educational content.
 
-### 🎮 Command Arguments  
-- `-debug` (For when things go *pear-shaped*.)  
-- `-settingfile` (Because defaults are boring.)  
+## Plan
+Nothing is done yet; this will change over time. Stay tuned for updates!
 
----
-
-## ❓ What’s `.exmak`?  
-A PyNote-exclusive format for quizzes. Perfect for educators, students, or anyone who enjoys a good self-inflicted pop quiz.  
-
----
-
-## 📅 Project Plan  
-*"Rome wasn’t built in a day, and neither is PyNote."*  
-Currently, it’s a blank canvas. Check back later for progress—or better yet, contribute!  
-
----
-
-## 🤝 Contribute  
-Found a bug? Have a genius idea?  
-- **Open a PR** (Pull Requests = Programmer High-Fives)  
-- **Submit issues** (Complaints accepted, but humor appreciated.)  
-
----
-
-## 💳 Credits  
-| Role       | Info                          |  
-|------------|-------------------------------|  
-| **Creator**  | [totol_ford and Ikytsu]            |  
-| **Email**    | [totolford@gmail.com]                  |  
-| **Discord**  | [@totolford  @lepoint]         |  
-| **PayPal**   | [paypal.me/totolford](https://r.mtdv.me/videos/-f1NsWh97b) (Coffee funds welcome ☕) |  
-
----
-
-*"PyNote: Because sometimes, budget software is all you need (and all you can afford)."* 🚀
-
+## Contribute
+Feel free to contribute by opening pull requests or submitting issues.
