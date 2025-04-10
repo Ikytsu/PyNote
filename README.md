@@ -1,13 +1,17 @@
-# PyNote
-Low-budget alternative to Notion
+# PyNote  
+*"Notion's rebellious little sibling – open-source, no strings attached, and built with love (and caffeine)."*  
 
-## Warning
-This project is made for educational purposes, so it may be unstable.
+---
 
-## Dependencies
+## ⚠️ Disclaimer  
+This project is primarily for educational purposes. Use at your own risk. 
+---
+
+## 📦 Dependencies  
 ``customtkinter`` and ``tkinter`` (for Linux users who don't have it already)
+---
 
-## Features
+## ✨ Features (Coming Soon™)  
 **Note that these features aren't implemented yet. See the plan section.**
 
 - **Custom settings**, including:
@@ -29,11 +33,28 @@ This project is made for educational purposes, so it may be unstable.
   - `-debug`
   - `-settingfile` (to use a settings file that’s not in the default folder).
 
-## .exmak
-`.exmak` files contain quiz data. You can create `.exmak` files easily in PyNote to integrate quizzes into learning courses or other educational content.
+---
 
-## Plan
+## ❓ What’s `.exmak`?  
+``.exmak`` files contain quiz data. You can create ``.exmak`` files easily in PyNote to integrate quizzes into learning courses or other educational content.
+---
+
+## 📅 Project Plan  
 Nothing is done yet; this will change over time. Stay tuned for updates!
+---
 
-## Contribute
+## 🤝 Contribute  
 Feel free to contribute by opening pull requests or submitting issues.
+---
+
+## 💳 Credits  
+| Role       | Info                          |  
+|------------|-------------------------------|  
+| **Creator**  | [totol_ford and Ikytsu]            |  
+| **Email**    | [totolford@gmail.com ikytsu02@gmail.com]                  |  
+| **Discord**  | [@totolford  @lepoint]         |  
+| **PayPal**   | [paypal.me/totolford](https://youtu.be/dQw4w9WgXcQ?si=-_6WTF8IWCWzj6IY) (Coffee funds welcome ☕) |  
+
+---
+
+*"PyNote: Because sometimes, budget software is all you need (and all you can afford)."* 🚀
