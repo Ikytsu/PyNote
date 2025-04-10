@@ -31,5 +31,9 @@
             "incorrect_settings": "Votre fichier de configuration est vide ou incomplet, la procédure de configuration recommence (cela va rénitialiser vos paramètres)",
             "incorrect_option2": "Vous devez choisir un dossier"
         }
+    },
+    "maingui":
+    {
+        "title": "Main gui: Y a rien à voir"
     }
 }

@@ -21,8 +21,8 @@ class App(customtkinter.CTk):
 
         
         self.config_folder = 'config'
-        self.setting_file = self.config_folder + "/settings.ini"
-        self.translation_folder = self.config_folder + "/translations"
+        self.setting_file = os.path.join(self.config_folder, "settings.ini")
+        self.translation_folder = os.path.join(self.config_folder, "translations")
 
         self.languages_dict = dict()
 
@@ -56,7 +56,7 @@ class App(customtkinter.CTk):
         
         if translation_files:
             for file in translation_files:
-                with open(self.translation_folder + "/" + file, 'r') as file:
+                with open(os.path.join(self.translation_folder, file), 'r') as file:
                     data = json.load(file)
                 self.languages_dict[file.name] = data
         self.languages_dict["English"] = integrated_language.english_data
@@ -82,7 +82,7 @@ class App(customtkinter.CTk):
         messagebox.showwarning(title, message)
     
     def main_gui(self):
-        self.text_label = customtkinter.CTkLabel(self, text="Main gui: Uh nothing, work in progress",  font=("Arial", 18))
+        self.text_label = customtkinter.CTkLabel(self, text=self.get_translation("maingui.title"),  font=("Arial", 18))
         self.text_label.grid(row=1, column=0, sticky="nsew")
         self.widgets.append(self.text_label)
 

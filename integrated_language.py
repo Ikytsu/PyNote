@@ -23,5 +23,9 @@ english_data = {
                 "incorrect_settings": "Configuration file empty, incomplete or incorrect (check your language section), restart of initial configuration (which will reset all your settings)",
                 "incorrect_option2": "You must choose a folder"
             }
+        },
+        "maingui":
+        {
+            "title": "Main gui: Uh nothing, work in progress"
         }
 }
