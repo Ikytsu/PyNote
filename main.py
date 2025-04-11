@@ -3,10 +3,12 @@ import tkinter
 import sys
 from tkinter import filedialog
 from tkinter import messagebox
+from tkinter import LEFT, Y, BOTH, TOP, X
 import configparser
 import os
 import integrated_language
 import json
+import io
 
 class App(customtkinter.CTk):
     def __init__(self):
@@ -30,7 +32,7 @@ class App(customtkinter.CTk):
 
         if os.path.exists(self.setting_file):
             config = configparser.ConfigParser()
-            config.read(self.setting_file)
+            config.read(self.setting_file, encoding='utf-8')
 
             try:
                 self.language = config.get('Settings', 'language')
@@ -82,9 +84,15 @@ class App(customtkinter.CTk):
         messagebox.showwarning(title, message)
     
     def main_gui(self):
-        self.text_label = customtkinter.CTkLabel(self, text=self.get_translation("maingui.title"),  font=("Arial", 18))
+        """self.text_label = customtkinter.CTkLabel(self, text=self.get_translation("maingui.title"),  font=("Arial", 18))
         self.text_label.grid(row=1, column=0, sticky="nsew")
-        self.widgets.append(self.text_label)
+        self.widgets.append(self.text_label)"""
+        self.nav_frame = customtkinter.CTkFrame(self, fg_color="#141517")
+        self.nav_frame.pack(side=LEFT, fill=Y)
+        self.top_frame= customtkinter.CTkFrame(self, fg_color="blue", height=40)
+        self.top_frame.pack(side=TOP, fill=X)
+        self.main = customtkinter.CTkFrame(self, corner_radius=0, fg_color="white")
+        self.main.pack(fill=BOTH, expand=True)
 
     def setup_gui(self, step: int):
         def Next_Button(option: int):
@@ -105,23 +113,29 @@ class App(customtkinter.CTk):
                     widget.destroy()
             if option == 1:
                 config = configparser.ConfigParser()
-                config.read(self.setting_file)
+                config.read(self.setting_file, encoding='utf-8')
                 config.add_section("Settings")
-                config.set("Settings", "language", str(info))
-                with open(self.setting_file, "w") as configfile:
-                    config.write(configfile)
+                config.set("Settings", "language", info)
+                s = io.StringIO()
+                config.write(s)
+                with open(self.setting_file, "w", encoding='utf-8') as configfile:
+                    configfile.write(s.getvalue())
             elif option == 2:
                 config = configparser.ConfigParser()
-                config.read(self.setting_file)
-                config.set("Settings", "path", str(info))
-                with open(self.setting_file, "w") as configfile:
-                    config.write(configfile)
+                config.read(self.setting_file, encoding='utf-8')
+                config.set("Settings", "path", info)
+                s = io.StringIO()
+                config.write(s)
+                with open(self.setting_file, "w", encoding='utf-8') as configfile:
+                    configfile.write(s.getvalue())
             elif option == 3:
                 config = configparser.ConfigParser()
-                config.read(self.setting_file)
+                config.read(self.setting_file, encoding='utf-8')
                 config.set("Settings", "updatewarning", str(info))
-                with open(self.setting_file, "w") as configfile:
-                    config.write(configfile)
+                s = io.StringIO()
+                config.write(s)
+                with open(self.setting_file, "w", encoding='utf-8') as configfile:
+                    configfile.write(s.getvalue())
             self.widgets.clear()
             if option != 3: self.setup_gui(option + 1)
             else:  self.main_gui()   
