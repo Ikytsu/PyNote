@@ -19,8 +19,6 @@ class App(customtkinter.CTk):
         self.grid_columnconfigure(0, weight=2)
         self.grid_rowconfigure(1, weight=1)
         self.grid_rowconfigure(2, weight=1)
-        self.widgets = []
-
         
         self.config_folder = 'config'
         self.setting_file = os.path.join(self.config_folder, "settings.ini")
@@ -33,19 +31,26 @@ class App(customtkinter.CTk):
         if os.path.exists(self.setting_file):
             config = configparser.ConfigParser()
             config.read(self.setting_file, encoding='utf-8')
-
+            success = False
             try:
                 self.language = config.get('Settings', 'language')
                 if not self.language in list(self.languages_dict.keys()):
                     raise ValueError
                 self.default_path = config.get('Settings', 'path')
                 self.update_warning = config.getboolean('Settings', 'updatewarning')
-                self.main_gui()
+                success = True
             except:
                 with open(self.setting_file, "w"):
                     pass
+                config = configparser.ConfigParser()
+                config.read(self.setting_file)
+                config.add_section("Settings")
+                with open(self.setting_file, "w") as configfile:
+                    config.write(configfile)
                 self.warn(self.get_translation("warn.title.incorrect_settings"), self.get_translation("warn.description.incorrect_settings"))
                 self.setup_gui(1)
+            if success == True:
+                self.main_gui()
         else:
             open(self.setting_file, "w").close()
             self.setup_gui(1)
@@ -84,9 +89,6 @@ class App(customtkinter.CTk):
         messagebox.showwarning(title, message)
     
     def main_gui(self):
-        """self.text_label = customtkinter.CTkLabel(self, text=self.get_translation("maingui.title"),  font=("Arial", 18))
-        self.text_label.grid(row=1, column=0, sticky="nsew")
-        self.widgets.append(self.text_label)"""
         self.nav_frame = customtkinter.CTkFrame(self, fg_color="#141517")
         self.nav_frame.pack(side=LEFT, fill=Y)
         self.top_frame= customtkinter.CTkFrame(self, fg_color="blue", height=40)
@@ -95,53 +97,40 @@ class App(customtkinter.CTk):
         self.main.pack(fill=BOTH, expand=True)
 
     def setup_gui(self, step: int):
-        def Next_Button(option: int):
-            info = None
-            if option == 2:
-                for widget in self.widgets:
-                    if isinstance(widget, customtkinter.StringVar) and widget.get() == "":
-                        self.warn(self.get_translation("warn.title.incorrect_option"), self.get_translation("warn.description.incorrect_option2"))
-                        return
-            for widget in self.widgets:
-                if isinstance(widget, customtkinter.CTkComboBox):
-                    info = widget.get()
-                elif isinstance(widget, customtkinter.CTkTextbox):
-                    info = widget.get("1.0", "end-1c")
-                elif isinstance(widget, customtkinter.BooleanVar) or isinstance(widget, customtkinter.StringVar):    
-                    info = widget.get()
-                if not isinstance(widget, customtkinter.BooleanVar) and not isinstance(widget, customtkinter.StringVar):
-                    widget.destroy()
-            if option == 1:
-                config = configparser.ConfigParser()
-                config.read(self.setting_file, encoding='utf-8')
-                config.add_section("Settings")
-                config.set("Settings", "language", info)
-                s = io.StringIO()
-                config.write(s)
-                with open(self.setting_file, "w", encoding='utf-8') as configfile:
-                    configfile.write(s.getvalue())
-            elif option == 2:
-                config = configparser.ConfigParser()
-                config.read(self.setting_file, encoding='utf-8')
-                config.set("Settings", "path", info)
-                s = io.StringIO()
-                config.write(s)
-                with open(self.setting_file, "w", encoding='utf-8') as configfile:
-                    configfile.write(s.getvalue())
-            elif option == 3:
-                config = configparser.ConfigParser()
-                config.read(self.setting_file, encoding='utf-8')
-                config.set("Settings", "updatewarning", str(info))
-                s = io.StringIO()
-                config.write(s)
-                with open(self.setting_file, "w", encoding='utf-8') as configfile:
-                    configfile.write(s.getvalue())
-            self.widgets.clear()
-            if option != 3: self.setup_gui(option + 1)
+        def Add_Config(option : str, info):
+            config = configparser.ConfigParser()
+            config.read(self.setting_file, encoding='utf-8')
+            config.set("Settings", option, str(info))
+            s = io.StringIO()
+            config.write(s)
+            with open(self.setting_file, "w", encoding='utf-8') as configfile:
+                configfile.write(s.getvalue())
+        def Next_Button():
+            if step == 1:
+                info = self.combobox.get()
+                self.combobox.destroy()
+                Add_Config("language", info)
+            elif step == 2:
+                info = self.selected_var.get()
+                if info == "":
+                    self.warn(self.get_translation("warn.title.incorrect_option"), self.get_translation("warn.description.incorrect_option2"))
+                    return
+                self.select_button.destroy()
+                self.text_label2.destroy()
+                Add_Config("path", info)
+            elif step == 3:
+                info = self.check_var.get()
+                self.text_label.destroy()
+                self.checkbox.destroy()
+                self.button.destroy()
+                Add_Config("updatewarning", info)
+            if step != 3: self.setup_gui(step + 1)
             else:  self.main_gui()   
-        self.button = customtkinter.CTkButton(self, text=self.get_translation("setup.button"), command=lambda: Next_Button(option=step))
-        self.button.grid(row=2, column=0, sticky="se")
-        self.widgets.append(self.button)
+        if step == 1:
+            self.button = customtkinter.CTkButton(self, text=self.get_translation("setup.button"), command=Next_Button)
+            self.button.grid(row=2, column=0, sticky="se")
+        else:
+            self.button.configure(command=Next_Button)
         if step == 1:
             def on_combobox_change(event):
                 self.language = self.combobox.get()
@@ -149,11 +138,9 @@ class App(customtkinter.CTk):
                 self.button.configure(text=self.get_translation("setup.button"))
             self.text_label = customtkinter.CTkLabel(self, text="Choose your language:",  font=("Arial", 18))
             self.text_label.grid(row=1, column=0, sticky="nsew")
-            self.widgets.append(self.text_label)
             self.combobox = customtkinter.CTkComboBox(master=self, values=list(self.languages_dict.keys()), state="readonly", command=on_combobox_change)
             self.combobox.grid(row=2, column=0, sticky="n")
             self.combobox.set("English")
-            self.widgets.append(self.combobox)
         elif step == 2:
             def Choose_Directory():
                 folder_path = filedialog.askdirectory()
@@ -163,29 +150,19 @@ class App(customtkinter.CTk):
                     self.selected_var.set(folder_path)
 
             
-            self.text_label = customtkinter.CTkLabel(self, text=self.get_translation("setup.option2.text_label"),  font=("Arial", 18))
-            self.text_label.grid(row=1, column=0, sticky="nsew")
-            self.widgets.append(self.text_label)
+            self.text_label.configure(text=self.get_translation("setup.option2.text_label"))
             self.selected_var = customtkinter.StringVar()
             self.selected_var.set("")
-            self.widgets.append(self.selected_var)
             self.select_button = customtkinter.CTkButton(self, text=self.get_translation("setup.option2.select_button"), command=Choose_Directory)
             self.select_button.grid(row=2, column=0, sticky="n")
-            self.widgets.append(self.select_button)
             self.text_label2 = customtkinter.CTkLabel(self, text=self.get_translation("setup.option2.text_label2_notselected"),  font=("Arial", 18))
             self.text_label2.grid(row=2, column=0)
-            self.widgets.append(self.text_label2)
 
         elif step == 3:
-            self.text_label = customtkinter.CTkLabel(self, text=self.get_translation("setup.option3.text_label"),  font=("Arial", 18))
-            self.text_label.grid(row=1, column=0, sticky="nsew")
-            self.widgets.append(self.text_label)
+            self.text_label.configure(self.get_translation("setup.option3.text_label"))
             self.check_var = customtkinter.BooleanVar()
             self.checkbox = customtkinter.CTkCheckBox(self, text="", variable=self.check_var)
-            self.widgets.append(self.check_var)
             self.checkbox.grid(row=2, column=0, sticky="n")
-            self.widgets.append(self.checkbox)
-
 
             
     
