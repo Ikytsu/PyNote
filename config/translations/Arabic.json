@@ -1,0 +1,34 @@
+{
+    "setup":
+    {
+        "option1":
+        {
+            "text_label": "اختر لغتك"
+        },
+        "option2":
+        {
+            "text_label": "موقع الحفظ الافتراضي لـ Pynotes",
+            "select_button": "اختر مجلدًا",
+            "text_label2_selected": "المجلد المحدد:",
+            "text_label2_notselected": "لم يتم اختيار مجلد"
+        },
+        "option3":
+        {
+            "text_label": "أخبرني عندما يكون هناك تحديث"
+        },
+        "button": "التالي"
+    },
+    "warn":
+    {
+        "title":
+        {
+            "incorrect_option": "اختيار خيار غير صحيح",
+            "incorrect_settings": "ملف تكوين غير صحيح"
+        },
+        "description":
+        {
+            "incorrect_settings": "ملف التكوين الخاص بك فارغ أو غير مكتمل، سيتم إعادة تشغيل إجراء الإعداد (هذا سيعيد تعيين إعداداتك)",
+            "incorrect_option2": "يجب عليك اختيار مجلد"
+        }
+    }
+}

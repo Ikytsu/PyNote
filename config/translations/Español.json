@@ -1,0 +1,34 @@
+{
+    "setup":
+    {
+        "option1":
+        {
+            "text_label": "Elige tu idioma"
+        },
+        "option2":
+        {
+            "text_label": "Ubicación de guardado predeterminada para Pynotes",
+            "select_button": "Elegir una carpeta",
+            "text_label2_selected": "Carpeta seleccionada:",
+            "text_label2_notselected": "Ninguna carpeta seleccionada"
+        },
+        "option3":
+        {
+            "text_label": "Notificarme cuando haya una actualización"
+        },
+        "button": "Siguiente"
+    },
+    "warn":
+    {
+        "title":
+        {
+            "incorrect_option": "Opción incorrecta",
+            "incorrect_settings": "Archivo de configuración incorrecto"
+        },
+        "description":
+        {
+            "incorrect_settings": "Tu archivo de configuración está vacío o incompleto, el procedimiento de configuración se reinicia (esto restablecerá tus ajustes)",
+            "incorrect_option2": "Debes elegir una carpeta"
+        }
+    }
+}

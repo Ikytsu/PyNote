@@ -1,0 +1,34 @@
+{
+    "setup":
+    {
+        "option1":
+        {
+            "text_label": "选择您的语言"
+        },
+        "option2":
+        {
+            "text_label": "Pynotes的默认保存位置",
+            "select_button": "选择文件夹",
+            "text_label2_selected": "已选文件夹:",
+            "text_label2_notselected": "未选择文件夹"
+        },
+        "option3":
+        {
+            "text_label": "有更新时通知我"
+        },
+        "button": "下一步"
+    },
+    "warn":
+    {
+        "title":
+        {
+            "incorrect_option": "选项选择不正确",
+            "incorrect_settings": "配置文件不正确"
+        },
+        "description":
+        {
+            "incorrect_settings": "您的配置文件为空或不完整，设置过程将重新开始（这将重置您的设置）",
+            "incorrect_option2": "您必须选择一个文件夹"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "setup":
+    {
+        "option1":
+        {
+            "text_label": "Выберите ваш язык"
+        },
+        "option2":
+        {
+            "text_label": "Место сохранения по умолчанию для Pynotes",
+            "select_button": "Выбрать папку",
+            "text_label2_selected": "Выбранная папка:",
+            "text_label2_notselected": "Папка не выбрана"
+        },
+        "option3":
+        {
+            "text_label": "Уведомлять меня об обновлениях"
+        },
+        "button": "Далее"
+    },
+    "warn":
+    {
+        "title":
+        {
+            "incorrect_option": "Неправильный выбор опции",
+            "incorrect_settings": "Некорректный файл настроек"
+        },
+        "description":
+        {
+            "incorrect_settings": "Ваш файл настроек пуст или неполон, процедура настройки перезапускается (это сбросит ваши настройки)",
+            "incorrect_option2": "Вы должны выбрать папку"
+        }
+    }
+}
