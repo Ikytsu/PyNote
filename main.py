@@ -56,7 +56,7 @@ class App(customtkinter.CTk):
         
         if translation_files:
             for file in translation_files:
-                with open(os.path.join(self.translation_folder, file), 'r') as file:
+                with open(os.path.join(self.translation_folder, file), 'r', encoding='utf-8') as file:
                     data = json.load(file)
                 self.languages_dict[file.name] = data
         self.languages_dict["English"] = integrated_language.english_data
